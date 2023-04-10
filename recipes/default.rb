@@ -15,3 +15,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+cookbook_file '/etc/profile.d/motd.sh' do
+  source 'motd.sh'
+  mode '0755'
+end
+
+template '/etc/motd' do
+  source 'motd.erb'
+  mode '0644'
+end
+
+
+node.default['anhgrew']['message'] = "Hi, I am Anhgrew"
