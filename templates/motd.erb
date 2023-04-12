@@ -1,3 +1,7 @@
 This node is running on <%= node['virtualization']['system'] %>
 IP address of this node is <%= node['ipaddress'] %>
+IP address of this node is <%= node['anhgrew']['age'] %>
 <%= node['anhgrew']['message'] %>
+<% node['anhgrew']['content'].each do |line| -%>
+<%= line %>
+<% end -%>

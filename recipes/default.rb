@@ -28,3 +28,27 @@ end
 
 
 node.default['anhgrew']['message'] = "Hi, I am Anhgrew"
+include_recipe 'anhgrew::student'
+
+package 'epel-release' do
+  action :install
+end
+
+
+
+package 'nginx' do
+  action :install
+end
+
+service 'nginx' do
+  action [:enable, :start]
+end
+
+
+
+
+
+# template '/usr/share/nginx/html/index.html' do
+#   source 'index.html.erb'
+#   mode '0644'
+# end

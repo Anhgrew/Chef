@@ -1,4 +1,4 @@
-# Chef InSpec test for recipe anhgrew::default
+# Chef InSpec test for recipe anhgrew::student
 
 # The Chef InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
@@ -13,19 +13,4 @@ end
 # This is an example test, replace it with your own test.
 describe port(80), :skip do
   it { should_not be_listening }
-end
-
-describe package('nginx') do
-  it { should be_installed }
-end
-
-describe service('nginx') do
-  it { should be_installed }
-  it { should be_enabled }
-  it { should be_running }
-end
-
-describe command('curl localhost') do
-  it { should exist }
-  its('stout') { should match('Anhgrew') }
 end
