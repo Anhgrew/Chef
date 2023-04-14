@@ -1,25 +1,52 @@
 # Cookbook to install nginx - Chef
 
 This cookbook installs and configures a simple web
-site using the anhgrew web server.
-
-- [x] Usage
+site using nginx web server.
 ---
-
-Add `Anhgrew` to your node's run list.
-
 - [x] Requirements
+
+# Install chef-workstation
+
+```
+wget https://packages.chef.io/files/stable/chef-workstation/23.4.1032/ubuntu/22.04/chef-workstation_23.4.1032-1_amd64.deb
+
+dpkg -i chef-workstation_23.4.1032-1_amd64.deb 
+```
 ---
 
 Supports only CentOS or other RHEL variants for now.
 
-- [x] Testing
+# Run cookbook
+
+```
+git clone https://github.com/Anhgrew/Chef.git anhgrew && cd anhgrew
+
+kitchen create 
+
+kichen login 
+
+kitchen converge 
+
+kitchen verify
+
+```
+
+# Destroy kitchen container 
+```
+kitchen destroy
+```
+
+# Testing
 ---
 
 A `.kitchen.yml` file is provided. Run `kitchen test` to verify this cookbook.
+
 ---
+
+
 # Chef Cookbook - Source Code Organization:
 ```
+# Cookbook source organization
 .
 ├── attributes
 │   └── default.rb
@@ -55,6 +82,8 @@ A `.kitchen.yml` file is provided. Run `kitchen test` to verify this cookbook.
         └── default
             ├── default_test.rb
             └── student_test.rb
+
+
 
 
 # Generator To Generate Bare Cookbook
