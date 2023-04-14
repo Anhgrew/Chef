@@ -10,11 +10,10 @@ provisioner:
   name: dokken
 
 platforms:
-  - name: centos-8
+  - name: centos73
     driver:
-      image: dokken/centos-8
+      image: centos:7.3.1611
       pid_one_command: /usr/lib/systemd/systemd
-      #pid_one_command: /usr/sbin/init
       intermediate_instructions:
         - RUN yum -y install lsof which systemd-sysv initscripts net-tools
 
@@ -24,13 +23,7 @@ verifier:
 suites:
   - name: default
     run_list:
-      - recipe[anhgrew::default]
-    driver:
-      hostname: nguyenanhdevops.chef
-      intermediate_instructions:
-        - RUN yum update -y
-      ports:
-        - 9999:80
+      - recipe[<%= cookbook_name %>::default]
     verifier:
       inspec_tests:
         - test/integration/default
