@@ -3,20 +3,23 @@
 This cookbook installs and configures a simple web
 site using the anhgrew web server.
 
-# Usage
-=======
+- [x] Usage
+---
+
 Add `Anhgrew` to your node's run list.
 
-# Requirements
-============
+- [x] Requirements
+---
+
 Supports only CentOS or other RHEL variants for now.
 
-# Testing
-=======
-A `.kitchen.yml` file is provided. Run `kitchen test` to verify this cookbook.
+- [x] Testing
+---
 
-=======
+A `.kitchen.yml` file is provided. Run `kitchen test` to verify this cookbook.
+---
 # Chef Cookbook - Source Code Organization:
+```
 .
 ├── attributes
 │   └── default.rb
@@ -53,7 +56,7 @@ A `.kitchen.yml` file is provided. Run `kitchen test` to verify this cookbook.
             ├── default_test.rb
             └── student_test.rb
 
-========================
+
 # Generator To Generate Bare Cookbook
 |── test-gen
     ├── files
@@ -132,3 +135,4 @@ A `.kitchen.yml` file is provided. Run `kitchen test` to verify this cookbook.
             ├── resource.rb.erb
             ├── template.erb
             └── waiver.yml.erb
+```
